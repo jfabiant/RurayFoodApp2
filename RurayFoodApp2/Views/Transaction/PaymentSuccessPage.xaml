@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RurayFoodApp2.Views.Transaction.PaymentSuccessPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:viewModel="clr-namespace:RurayFoodApp2.ViewModels.Transaction"
+    xmlns:svg="clr-namespace:RurayFoodApp2.Controls"
+    Title="Payment Success Page"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout
+                HorizontalOptions="Center"
+                Spacing="0"
+                VerticalOptions="Center">
+
+                <StackLayout.BindingContext>
+                    <viewModel:PaymentViewModel />
+                </StackLayout.BindingContext>
+
+                <!--  Payment status image  -->
+                <svg:SVGImage
+                    Margin="0,10,0,0"
+                    HeightRequest="80"
+                    WidthRequest="80" 
+                    Source="{Binding PaymentSuccessIcon}" />
+
+                <!--  Payment status label  -->
+                <Label
+                    Margin="0,40,0,0"
+                    Style="{StaticResource LabelStyle}"
+                    Text="PAGO EXITOSO" />
+
+                <!--  Payment description label  -->
+                <Label
+                    Margin="17,8"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    Text="Gracias por tu pago. Se enviará un recibo de pago automatizado a su correo electrónico registrado." />
+
+                <button:SfButton
+                    Clicked="SfButton_Clicked"
+                    Command="{Binding TrackOrderCommand}"
+                    Style="{StaticResource SfGradientButtonStyle}"
+                    Text="VOLVER" />
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

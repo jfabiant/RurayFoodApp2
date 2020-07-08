@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:RurayFoodApp2.CustomRenderer"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="RurayFoodApp2.Views.LoginPage">
+
+    <ContentPage.Content>
+
+        <Grid>
+            <BoxView BackgroundColor="#333" />
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="https://raw.githubusercontent.com/jfabiant/RurayFoodApp/dev/RurayFoodApp.Android/Resources/drawable/logo_white.png" WidthRequest="100" HeightRequest="200"/>
+
+                <StackLayout Grid.Row="1" Padding="30,1">
+                    <Frame BackgroundColor="Transparent" BorderColor="#8c7b75" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+                            </Frame>
+                            <local:CustomEntry PlaceholderColor="#ffffff" Placeholder="Email" TextColor="#ffffff" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="Transparent" BorderColor="#8c7b75" Margin="0,15,0,10" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+                            </Frame>
+
+                            <local:CustomEntry PlaceholderColor="#ffffff" Placeholder="Contraseña" IsPassword="True" TextColor="#ffffff" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+
+
+                    <Button Text="Ingresar" BackgroundColor="#e93e21" TextColor="White" CornerRadius="30" Clicked="Button_Login"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="¿Recuperar contraseña?" TextColor="#ffffff"/>
+                        <Label Text="Registrarme" HorizontalOptions="EndAndExpand" 
+                               TextColor="#ffffff" FontAttributes="Bold"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,0,0,20">
+                    <Label Text="Iniciar sesión con" HorizontalOptions="Center" TextColor="#ffffff"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Grid.Row="0" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1200px-Facebook_icon_2013.svg.png" WidthRequest="40" HeightRequest="40"/>
+                        <Image Grid.Row="0" Source="https://reset-si.es/wp-content/uploads/2018/12/google-plus-940316_1280-300x293.png" WidthRequest="40" HeightRequest="40"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
